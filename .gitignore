@@ -1,0 +1,15 @@
+# Local configurations
+core/config/db.php
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+
+# Logs
+logs/
+*.log

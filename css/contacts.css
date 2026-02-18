@@ -1,0 +1,277 @@
+.contact-grid {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-form-section h2,
+.contact-info-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .contact-form-section h2,
+  .contact-info-section h2 {
+    font-size: 1.875rem;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 5px;
+  height: fit-content;
+  padding: 1.5rem 1rem;
+  transition: 0.4s ease;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.contact-form:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.form-row {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--minor-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(174, 174, 174, 0.166);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--minor-color);
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px hsla(0, 99%, 49%, 0.736);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-group textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+}
+
+.submit-btn .spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid hsla(0, 0%, 100%, 0.3);
+  border-top-color: var(--primary-foreground);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: 0.4s ease;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.contact-info-item:hover {
+  transform: translateX(5px);
+  border: 1px solid var(--main-color);
+}
+
+.contact-info-icon {
+  width: 48px;
+  height: 48px;
+  background-color: hsla(0, 85%, 50%, 0.1);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-info-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--main-color);
+}
+
+.contact-info-content h3 {
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 0.25rem;
+}
+
+.contact-info-content p,
+.contact-info-content a {
+  color: var(--minor-color);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.contact-info-content a:hover {
+  color: var(--primary);
+}
+
+.map-container {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.map-container iframe {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border: none;
+}
+
+.toast-container {
+  position: fixed;
+  top:1rem;
+  right: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--main-color);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.toast {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 360px;
+}
+
+.toast.success {
+  border-left: 4px solid var(--primar-color);
+}
+
+.toast.error {
+  border-left: 4px solid var(--destructive);
+}
+
+.toast-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.toast.success .toast-icon {
+  color: var(--primary-color);
+}
+
+.toast.error .toast-icon {
+  color: var(--destructive);
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  font-weight: 600;
+  color: var(--minor-color);
+  font-size: 0.875rem;
+}
+
+.toast-description {
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  margin-top: 0.125rem;
+}
+
+.toast-close {
+  padding: 0.25rem;
+  color: var(--minor-color);
+  transition: color 0.3s ease;
+}
+
+.toast-close:hover {
+  color: var(--main-color);
+}
+
+.toast-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.toast-exit {
+  animation: slideOutRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+}
+
+.hide-desktop {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none;
+  }
+}

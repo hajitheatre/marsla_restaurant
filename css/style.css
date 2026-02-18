@@ -1,0 +1,332 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-position: center center /no-repeat;
+  background-size: cover;
+  color: black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  height: 100vh;
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+              url("../assets/pattern_orange.svg");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity:1;
+  z-index: -1;
+}
+
+h1, h2, h3 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-fade-out-down {
+  animation: fadeOutDown 0.4s ease-out forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 24rem;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.logo-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  height: 7rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+}
+
+.logo-section h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 0.25rem;
+}
+
+.logo-section p {
+  color: #11790a;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.server-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.server-message.hidden {
+  display: none;
+}
+
+.server-message.leaving {
+  animation: fadeOutDown 0.4s ease-out forwards;
+}
+
+.server-message.error {
+  background: hsla(0, 84.2%, 60.2%, 0.1);
+  color: #ff5757;
+  border: 1px solid hsla(0, 84.2%, 60.2%, 0.2);
+}
+
+.server-message.success {
+  background: hsla(140, 60%, 40%, 0.1);
+  color: #46c25c;
+  border: 1px solid hsla(140, 60%, 40%, 0.2);
+}
+
+.server-message svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group .input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black;
+  pointer-events: none;
+}
+
+.input-group .input-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.input-group input {
+  width: 100%;
+  height: 3rem;
+  padding: 0.5rem 1rem 0.5rem 3rem;
+  border: 1px solid #11790a;
+  border-radius: 0.5rem;
+  background: transparent;
+  font-size: 0.875rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: black;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input-group.has-toggle input {
+  padding-right: 3rem;
+}
+
+.input-group input::placeholder {
+  color: black;
+}
+
+.input-group input:focus {
+  border-color: #ff0000;
+}
+
+.input-group input.error {
+  border-color: #ff5757;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: #ff0000;
+}
+
+.toggle-password svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.error-message {
+  font-size: 0.875rem;
+  color: #ff5757;
+  margin-top: 0.25rem;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.submit-btn.primary {
+  background: #ff0000;
+}
+
+.submit-btn.secondary {
+  background: #11790a;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+}
+
+.auth-footer a {
+  font-weight: 600;
+  transition: text-decoration 0.2s ease;
+}
+
+.auth-footer a.primary {
+  color: #ff0000;
+}
+
+.auth-footer a.secondary {
+  color: #11790a;
+}
+
+.auth-form .input-group:nth-child(1) { animation: fadeInUp 0.5s ease-out 0.1s backwards; }
+.auth-form .input-group:nth-child(2) { animation: fadeInUp 0.5s ease-out 0.2s backwards; }
+.auth-form .input-group:nth-child(3) { animation: fadeInUp 0.5s ease-out 0.3s backwards; }
+.auth-form .submit-btn { animation: fadeInUp 0.5s ease-out 0.4s backwards; }
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 1.5rem;
+  }
+  
+  .logo {
+    height: 5rem;
+  }
+  
+  .logo-section h1 {
+    font-size: 1.25rem;
+  }
+}
+
+.home-link {
+  display: inline-block;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.2s ease;
+}
+.home-link:hover {
+  color: #ff0000;
+  text-decoration: underline;
+}

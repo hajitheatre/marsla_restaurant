@@ -1,0 +1,229 @@
+.story-section {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .story-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.story-image-container {
+  position: relative;
+}
+
+.story-image {
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card);
+  width: 100%;
+}
+
+
+@media (min-width: 768px) {
+  .story-badge {
+    display: block;
+  }
+}
+
+.story-content h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .story-content h2 {
+    font-size: 2.25rem;
+  }
+}
+
+.story-content p {
+  color: var(--muted-foreground);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.values-section {
+  background-color: hsla(30, 15%, 92%, 0.5);
+}
+
+.values-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.values-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--minor-color);
+}
+
+@media (min-width: 768px) {
+  .values-title {
+    font-size: 2.25rem;
+  }
+}
+
+.values-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.value-card {
+  background-color: var(--card);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+.value-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px);
+}
+
+.value-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.value-icon.primary {
+  background-color: hsla(0, 85%, 50%, 0.1);
+}
+
+.value-icon.primary svg {
+  color: var(--main-color);
+}
+
+.value-icon.secondary {
+  background-color: hsla(120, 82%, 25%, 0.1);
+}
+
+.value-icon.secondary svg {
+  color: var(--primary-color);
+}
+
+.value-icon.accent {
+  background-color: hsla(35, 90%, 55%, 0.2);
+}
+
+.value-icon.accent svg {
+  color: var(--main-color);
+}
+
+.value-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.value-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
+}
+
+.value-description {
+  color: var(--minor-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.chefs-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.chefs-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .chefs-title {
+    font-size: 2.25rem;
+  }
+}
+
+.chefs-subtitle {
+  color: var(--muted-foreground);
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.chefs-grid {
+  display: grid;
+  gap: 2rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .chefs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.chef-card {
+  background-color: var(--card);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.chef-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px);
+}
+
+.chef-image {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+}
+
+.chef-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chef-info {
+  padding: 1.5rem;
+}
+
+.chef-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--minor-color);
+  margin-bottom: 0.25rem;
+}
+
+.chef-title {
+  color: var(--main-color);
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.chef-bio {
+  color: var(--minor-color);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}

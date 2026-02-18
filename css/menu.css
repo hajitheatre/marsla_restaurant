@@ -1,0 +1,233 @@
+.menu-filters {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 80px;
+  background-color: var(--background);
+  z-index: 40;
+}
+
+.search-container {
+  position: relative;
+  max-width: 28rem;
+  margin: 0 auto 1.5rem;
+}
+
+.search-container svg {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--primary-color);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 3rem;
+  font-size: 1rem;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.search-input:focus {
+  outline: none;
+  border: 1px solid var(--main-color);
+}
+
+.search-input::placeholder {
+  color: var(--muted-foreground);
+}
+
+.category-filters {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0.25rem;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+@media (min-width: 768px) {
+  .category-filters {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+  }
+}
+
+.category-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  background-color: hsla(30, 15%, 88%, 0.8);
+}
+
+.category-btn.active {
+  background-color: var(--main-color);
+  color: var(--background);
+}
+
+.menu-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.menu-card {
+  background-color: var(--card);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.5s ease;
+}
+
+.menu-card:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-8px);
+}
+
+.menu-card-image {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.menu-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.menu-card:hover .menu-card-image img {
+  transform: scale(1.1);
+}
+
+.menu-card-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: hsla(20, 20%, 15%, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-card-overlay span {
+  color: var(--background);
+  font-weight: 600;
+}
+
+.menu-badges {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-secondary {
+  background-color: var(--main-color);
+  color: var(--background);
+}
+
+.badge-available {
+  background-color: var(--primary-color);
+  color: var(--background);
+}
+
+.badge-unavailable {
+  background-color: var(--destructive);
+  color: var(--destructive-foreground);
+}
+
+.badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+.menu-card-content {
+  padding: 1.5rem;
+}
+
+.menu-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.menu-card-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.menu-card-price {
+  color: var(--primary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.menu-card-description {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.menu-card-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.menu-card-actions button {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--muted-foreground);
+  font-size: 1.125rem;
+}
