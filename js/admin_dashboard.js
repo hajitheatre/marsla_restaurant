@@ -800,7 +800,7 @@ function renderFoodItems(filter = "") {
     .join("");
 
   if (filtered.length === 0) {
-    grid.innerHTML = '<div class="empty-state">No food items found</div>';
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:4rem 2rem;color:hsl(var(--muted-foreground));opacity:0.7;font-size:1.1rem;width:100%;">No food items found</div>';
   }
 }
 
@@ -1086,7 +1086,7 @@ function renderOrders(filter = "", status = "all") {
 
   if (filtered.length === 0) {
     tbody.innerHTML =
-      '<tr><td colspan="6" class="empty-state">No orders found</td></tr>';
+      '<tr><td colspan="6" style="text-align:center;padding:4rem 2rem;color:hsl(var(--muted-foreground));opacity:0.7;font-size:1.1rem;">No orders found</td></tr>';
   }
 }
 
@@ -1255,7 +1255,7 @@ function renderUsers(filter = "") {
 
   if (filteredUsers.length === 0) {
     tbody.innerHTML =
-      '<tr><td colspan="4" class="empty-state">No users found</td></tr>';
+      '<tr><td colspan="4" style="text-align:center;padding:4rem 2rem;color:hsl(var(--muted-foreground));opacity:0.7;font-size:1.1rem;">No users found</td></tr>';
   }
 }
 
@@ -1958,7 +1958,7 @@ function renderOffers() {
   if (!tbody) return;
 
   if (offers.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 2rem;">No offers found.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 4rem 2rem; color: var(--muted-foreground); font-size: 1.1rem; opacity: 0.7;">No offers found.</td></tr>';
     return;
   }
 
@@ -1989,7 +1989,7 @@ function renderOffersPreview() {
   if (!container) return;
 
   if (offers.length === 0) {
-    container.innerHTML = '<p>No offers to preview.</p>';
+    container.innerHTML = '<div class="no-results">No offers to preview.</div>';
     if (adminSliderInterval) clearInterval(adminSliderInterval);
     return;
   }
@@ -2197,7 +2197,7 @@ function renderGallery() {
   });
 
   if (filtered.length === 0) {
-    container.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:4rem; color:hsl(var(--muted-foreground));">No items found matching your criteria.</div>';
+    container.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:4rem 2rem;color:hsl(var(--muted-foreground));opacity:0.7;font-size:1.1rem;width:100%;">No items found matching your criteria.</div>';
     return;
   }
 

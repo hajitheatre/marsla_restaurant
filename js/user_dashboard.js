@@ -447,7 +447,7 @@ function renderOrders() {
   if (userOrders.length === 0) {
     tbody.innerHTML = `
             <tr>
-                <td colspan="6" style="text-align: center; padding: 2rem; color: var(--muted-foreground);">
+                <td colspan="6" style="text-align: center; padding: 4rem 2rem; color: var(--muted-foreground); font-size: 1.1rem; opacity: 0.7;">
                     No orders yet. Start ordering to see your history!
                 </td>
             </tr>
@@ -591,7 +591,7 @@ function updateCartUI() {
 
   if (cart.length === 0) {
     cartItemsContainer.innerHTML =
-      '<p class="cart-empty">Your cart is empty</p>';
+      '<div class="cart-empty"><p>Your cart is empty</p></div>';
     cartFooter.style.display = "none";
   } else {
     cartItemsContainer.innerHTML = cart

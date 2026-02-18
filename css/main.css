@@ -537,6 +537,7 @@ input, textarea, select {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 200px;
   height: 100%;
   text-align: center;
   color: var(--minor-color);
@@ -548,6 +549,21 @@ input, textarea, select {
   height: 64px;
   margin-bottom: 1rem;
   opacity: 0.5;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--minor-color);
+  opacity: 0.7;
+  font-size: 1.1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .cart-item {

@@ -438,7 +438,7 @@ function initGalleryPage() {
       : galleryItems.filter(item => item.media_type === currentFilter);
 
     if (filteredItems.length === 0) {
-      galleryGrid.innerHTML = '<div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 4rem 2rem;">No items found in this category.</div>';
+      galleryGrid.innerHTML = '<div class="no-results">No items found in this category.</div>';
       return;
     }
 
